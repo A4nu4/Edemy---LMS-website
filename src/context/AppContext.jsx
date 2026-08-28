@@ -9,6 +9,7 @@ export const AppContextProvider = (props) => {
   const navigate = useNavigate();
 
   const [allCourses, setAllCourses] = React.useState([]);
+  const [isEducator, setIsEducator] = React.useState(true);
 
   // Fetch All Courses
   const fetchAllCourses = () => {
@@ -36,6 +37,8 @@ export const AppContextProvider = (props) => {
     allCourses,
     navigate,
     calculateRating,
+    isEducator,
+    setIsEducator,
   };
   return (
     <AppContext.Provider value={value}>{props.children}</AppContext.Provider>
